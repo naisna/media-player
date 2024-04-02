@@ -1,0 +1,41 @@
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import Add from '../Components/Add'
+import Category from '../Components/Category'
+import View from '../Components/View'
+
+
+
+
+function Home() {
+  const[uploadVideoResponse,setUploadVideoResponse]=useState({})
+  const[dropVideoResponse,setDropVideoResponse]=useState({})
+  return (
+    <div>
+
+      <div className='container mt-5 d-flex mb-5 justify-content-between'>
+
+
+        <div className='add-videos'>
+          <Add setUploadVideoResponse={setUploadVideoResponse} />
+        </div>
+        <Link to={'/watchhistory'} style={{textDecoration:'none',color:'blueviolet',fontSize:'30px'}}>Watch-History
+        <i class="fa-solid fa-arrow-right-to-bracket fa-beat-fade"></i></Link>
+      </div>
+      <div className='container-fluid w-100 mt-5 mb-5 row'>
+        <div className='all-videos col-lg-9 '>
+
+          <h2>All-videos</h2>
+          <View uploadVideoResponse={uploadVideoResponse}  setDropVideoResponse={setDropVideoResponse}  />
+
+        </div>
+        <div className='category col-lg-3'>
+          <Category dropVideoResponse={dropVideoResponse}/>
+        </div>
+      </div>
+    </div>
+  )
+  
+}
+
+export default Home
