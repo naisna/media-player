@@ -1,1 +1,1 @@
-export const SERVER_URL ="media-player-dyunhjcez-naisna-ms-projects.vercel.app"
+export const SERVER_URL ="https://media-player-backend-pylr.onrender.com"
